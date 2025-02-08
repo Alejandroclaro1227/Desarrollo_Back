@@ -67,6 +67,10 @@ python manage.py createsuperuser
 
 - Ingresa un nombre de usuario, correo y contraseña.
 
+
+![Lista de Compras](https://raw.githubusercontent.com/Alejandroclaro1227/Desarrollo_Back/main/imagenes_prueba/Data.jfif)
+
+
 6️⃣ **Ejecutar el Servidor**
 
 Inicia el servidor de desarrollo de Django.
