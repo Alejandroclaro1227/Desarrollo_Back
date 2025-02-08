@@ -70,6 +70,20 @@ python manage.py createsuperuser
 
 ![Lista de Compras](https://raw.githubusercontent.com/Alejandroclaro1227/Desarrollo_Back/main/imagenes_prueba/Data.jfif)
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+![Formulario](https://raw.githubusercontent.com/Alejandroclaro1227/Desarrollo_Back/refs/heads/main/imagenes_prueba/html.jfif)
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+![JSON](https://github.com/Alejandroclaro1227/Desarrollo_Back/blob/main/imagenes_prueba/JSON.jfif)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+![Info](https://raw.githubusercontent.com/Alejandroclaro1227/Desarrollo_Back/refs/heads/main/imagenes_prueba/info.jfif)
+
+
+
 
 6️⃣ **Ejecutar el Servidor**
 
