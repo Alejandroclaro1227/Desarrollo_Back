@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Compras</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <h1>Lista de Compras</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Tipo Documento</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Monto</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for compra in compras %}
+        <tr>
+          <td>{{ compra.cliente.nombre }} {{ compra.cliente.apellido }}</td>
+          <td>{{ compra.cliente.tipo_documento.nombre }}</td>
+          <td>{{ compra.producto.nombre }}</td>
+          <td>{{ compra.cantidad }}</td>
+          <td>{{ compra.monto }}</td>
+          <td>{{ compra.fecha }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

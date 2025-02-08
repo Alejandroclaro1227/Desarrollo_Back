@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buscar Cliente</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Buscar Cliente</h1>
+      <form id="buscarClienteForm">
+        <label for="tipo_documento">Tipo de Documento:</label>
+        <select id="tipo_documento" name="tipo_documento">
+          <option value="NIT">NIT</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="PAS">Pasaporte</option>
+        </select>
+        <label for="numero_documento">Número de Documento:</label>
+        <input
+          type="text"
+          id="numero_documento"
+          name="numero_documento"
+          required
+        />
+        <button type="submit">Buscar</button>
+        <button type="button" id="limpiarBtn">Limpiar</button>
+      </form>
+      <div id="resultado"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("buscarClienteForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const numeroDocumento =
+            document.getElementById("numero_documento").value;
+          fetch(`/api/buscar_cliente/?numero_documento=${numeroDocumento}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.error) {
+                document.getElementById("resultado").innerText = data.error;
+              } else {
+                document.getElementById("resultado").innerHTML = `
+                                <p><strong>Número de Documento:</strong> ${data.numero_documento}</p>
+                                <p><strong>Nombre:</strong> ${data.nombre}</p>
+                                <p><strong>Apellido:</strong> ${data.apellido}</p>
+                                <p><strong>Correo:</strong> ${data.correo}</p>
+                                <p><strong>Teléfono:</strong> ${data.telefono}</p>
+                                <button onclick="exportarDatos('${data.numero_documento}')">Exportar Datos</button>
+                            `;
+              }
+            });
+        });
+
+      document
+        .getElementById("limpiarBtn")
+        .addEventListener("click", function () {
+          document.getElementById("tipo_documento").selectedIndex = 0;
+          document.getElementById("numero_documento").value = "";
+          document.getElementById("resultado").innerHTML = "";
+        });
+
+      function exportarDatos(numeroDocumento) {
+        window.location.href = `/api/exportar_cliente/?numero_documento=${numeroDocumento}`;
+      }
+    </script>
+  </body>
+</html>
