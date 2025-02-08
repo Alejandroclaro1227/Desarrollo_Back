@@ -26,8 +26,7 @@ Antes de comenzar, asegúrate de tener instalados:
 Clona el repositorio del proyecto en tu máquina local y navega al directorio del proyecto.
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_DIRECTORIO>
+git clone https://github.com/Alejandroclaro1227/Desarrollo_Back
 ```
 
 2️⃣ **Crear y Activar un Entorno Virtual**
